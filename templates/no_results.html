@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+{% block title %} Results {% endblock %}
+{% block content %}
+  <p class="important">No tasks found.</p>
+  <a class="btn btn-primary" role="button" href={{ url_for('create_task') }}>Create</a>
+{% endblock %}

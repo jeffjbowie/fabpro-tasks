@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block title %} View {% endblock %}
+{% block content %}
+  <table class="table table-striped table-dark">
+         <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created</th>
+                <th></th>
+            </tr>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+
+               <td>{{row["title"]}}</td>
+               <td>{{row["description"]}}</td>
+               <td>{{row["created"]}}</td>
+                <td>
+                    <a class="btn btn-danger" href="{{ url_for('delete_task', task_id=row["id"]) }}" role="button">X</a>
+                </td>
+            </tr>
+         {% endfor %}
+
+      </table>
+
+     <a class="btn btn-outline-dark" role="button" href={{ url_for('create_task') }}>Create</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block title %}Add{% endblock %}
+{% block content %}
+    <h1>Create Task</h1>
+    <div class="col-md">
+        <form action="{{ url_for('create_task') }}" method="post">
+            <div class="form-group">
+                <label for="taskTitleInput">Title</label>
+                <input type="text" name="title" class="form-control" id="taskTitleInput" placeholder="Walk The Dog">
+            </div>
+
+            <div class="form-group">
+                <label for="taskDescriptionInput">Description</label>
+                <input type="text" name="description" class="form-control" id="taskDescriptionInput" placeholder="Pick Up 10lb. Bag Of Dog Food While Out">
+            </div>
+            <button type="submit" class="btn btn btn-outline-dark">Save</button>
+        </form>
+    </div>
+{% endblock %}
